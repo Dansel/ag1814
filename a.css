@@ -29,6 +29,7 @@ img{display:block}
 #foot{position: absolute;bottom: 0;right:0;z-index: 70;width: 87px;line-height: 12px;}
 #foot div{height: 14px;background: #000;opacity: 0.6;filter: alpha(opacity60);padding: 2px 0px 0px 5px;}
 #popup{width:325px; height: 32px; background-color:#000;color:#FFF; opacity:0.6; filer:alpha(opacity=60); position:absolute; right:0px; bottom:16px; z-index:100; visibility:hidden;}
+#map{background:url(images/heatmap.png);background-size:cover;width:1000px;height:800px;left: 50px;top: 15%;position:absolute;}
 
 h1{position:relative;left:-141px;margin-bottom:-63px;width:140px;opacity:0.99}
 h1 a{padding:41px 10px 10px 0;color:#fff;background:#000 url(images/go.gif) 0 -30px repeat-x;font-size:14px;text-align:right;display:block}
