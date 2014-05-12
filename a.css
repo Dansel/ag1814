@@ -37,7 +37,7 @@ ul{float:left;width:70px;}
 li a{height:12px;padding:0px 5px;font-weight:bold;color:#999;display:block}
 li a:hover,li.cur a{color:#fff}
 
-.box{position:absolute;top:15%;right:20%;width:70%;padding-bottom:100px;opacity:0.60;filter:alpha(opacity=60);}
+.box{position:absolute;top:15%;right:20%;width:55%;padding-bottom:100px;opacity:0.60;filter:alpha(opacity=60);}
 .box div{line-height:1.5em;background:#fff;padding:20px 30px;}
 .box div a{text-decoration:underline;}
 .box table{margin: 5px; padding: 5px; }

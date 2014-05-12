@@ -1,12 +1,95 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
-<head>
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-	<script src="http://code.highcharts.com/highcharts.js"></script>
-	<script src="http://code.highcharts.com/highcharts.js"></script>
-	<script src="http://code.highcharts.com/highcharts-more.js"></script>
-	<script src="http://code.highcharts.com/modules/solid-gauge.src.js"></script>
-	<script type="text/javascript">$(function () {
+$(function () {
+		$('#graph01').highcharts({
+			title: {
+				text: 'Månadsförbrukning',
+				x: -20 //center
+			},
+			subtitle: {
+				text: 'Senaste 12 månaderna',
+				x: -20
+			},
+			xAxis: {
+				categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+					'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+			},
+			yAxis: {
+				title: {
+					text: 'Förbrukning (kWh)'
+				},
+				plotLines: [{
+					value: 0,
+					width: 1,
+					color: '#808080'
+				}]
+			},
+			tooltip: {
+				valueSuffix: 'kWh'
+			},
+			legend: {
+				layout: 'vertical',
+				align: 'right',
+				verticalAlign: 'middle',
+				borderWidth: 0
+			},
+			series: [ {
+				name: 'kWh',
+				data: [341, 336, 328, 315, 311, 310, 304, 308, 311, 324, 332, 334]
+			}]
+		});
+	});
+
+$(function () {
+	$('#graph02').highcharts({
+		chart: {
+			plotBackgroundColor: null,
+			plotBorderWidth: 0,
+			plotShadow: false
+		},
+		title: {
+			text: 'Du har använt<br>73%(200kWh)<br>av ditt mål<br> på 275kWh',
+			align: 'center',
+			verticalAlign: 'middle',
+			y: 50
+		},
+		tooltip: {
+			pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+		},
+		plotOptions: {
+			pie: {
+				dataLabels: {
+					enabled: true,
+					distance: -50,
+					style: {
+						fontWeight: 'bold',
+						color: 'white',
+						textShadow: '0px 1px 2px black'
+					}
+				},
+				startAngle: 0,
+				endAngle: 360,
+				center: ['50%', '75%']
+			}
+		},
+		series: [{
+			type: 'pie',
+			name: ' ',
+			innerSize: '50%',
+			data: [
+				['Förbrukat', 73],
+				{
+					name: 'Kvar',
+					y: 27,
+					dataLabels: {
+						enabled: false
+					}
+				}
+			]
+		}]
+	});
+});
+
+$(function () {
+	
 	var gaugeOptions = {
 	
 		chart: {
@@ -17,7 +100,7 @@
 		
 		pane: {
 			center: ['50%', '85%'],
-			size: '90%',
+			size: '140%',
 			startAngle: -90,
 			endAngle: 90,
 			background: {
@@ -125,8 +208,9 @@
 			point.update(newVal);
 		}
 	}, 2000);  
-	});</script>
-	<script type="text/javascript">$(function () {
+});
+
+$(function () {
 		$('#graph04').highcharts({
 			chart: {
 				type: 'column'
@@ -198,94 +282,4 @@
 
 			}]
 		});
-	});</script>
-	<script type="text/javascript">$(function () {
-		$('#graph01').highcharts({
-			title: {
-				text: 'Månadsförbrukning',
-				x: -20 //center
-			},
-			subtitle: {
-				text: 'Senaste 12 månaderna',
-				x: -20
-			},
-			xAxis: {
-				categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
-					'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
-			},
-			yAxis: {
-				title: {
-					text: 'Förbrukning (kWh)'
-				},
-				plotLines: [{
-					value: 0,
-					width: 1,
-					color: '#808080'
-				}]
-			},
-			tooltip: {
-				valueSuffix: 'kWh'
-			},
-			legend: {
-				layout: 'vertical',
-				align: 'right',
-				verticalAlign: 'middle',
-				borderWidth: 0
-			},
-			series: [ {
-				name: 'kWh',
-				data: [341, 336, 328, 315, 311, 310, 304, 308, 311, 324, 332, 334]
-			}]
-		});
-	});</script>
-	<script type="text/javascript">
-		function popup(){
-			document.getElementById('popup').style.visibility = 'visible';
-		}
-		function popdown(){
-			document.getElementById('popup').style.visibility = 'hidden';
-		}
-	</script>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<title>Your Brand</title>
-	<link rel="shortcut icon" href="images/favicon.ico">
-	<link rel="stylesheet" media="screen" type="text/css" href="a.css" />
-</head>
-<body>
-	<div id="menu">
-		<h1><a href="index.html"><b>YOUR</b>BRAND</a></h1>
-		<div>
-			<ul>
-				<li class="cur"><a href="about.html">Din sida</a></li>
-				<li><a href="contact.html">Översikt</a></li>
-				<li><a href="prices.html">Stuff</a></li>
-				<li><a href="gallery.html">Om oss och FAQ</a></li>
-			</ul>
-		</div>
-	</div>
-	<div id="cont">
-		<div class="box large left">
-			<h2><b>Din sida</b></h2>
-			Här finns info om saker som berör dig.
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-		</div>
-	</div>  
-	<div id="graph01" style="width:550px; height: 375px; position: absolute;bottom: 85px; left: 10%;"></div>
-	<div id="graph04" style="width:550px; height: 375px; position: absolute;bottom: 85px; right: 10%;"></div>
-	<div id="graph03" style="width:275px; heigth: 275px; position: absolute;top: 8%; right: 15%; margin: auto; padding: auto;"></div>
-	<div id="popup" onMouseOver="popup()" onMouseOut="popdown()">
-		<div class="popup">
-			All images are owned by Gustav Dänsel unless otherwise mentioned.<br/>
-			E-Mail: <a href="mailto:gustav@dansel.se">gustav@dansel.se</a>
-		</div>
-	</div>
-	<div id="foot">
-		<div class="foot" onMouseOver="popup()" onMouseOut="popdown()">
-			 © Your Brand
-		</div>
-	</div>
-</body>
-</html>
+	});
